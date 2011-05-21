@@ -191,7 +191,7 @@ fi
 less_vim -c "${extra_cmd:-echo}" $filename </dev/tty
 
 # terminal vim on OSX can screw up the terminal
-if [ -n "$osx" ]; then
+if [ -n "$osx" ] && [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
 	case $vim_cmd in
 		vim*)
 			reset
