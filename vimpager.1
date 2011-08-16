@@ -1,0 +1,51 @@
+.TH VIMPAGER 1 "June 22, 2011" "vimpager user manual"
+.SH NAME
+.PP
+vimpager - less.sh replacement
+.SH SYNOPSIS
+.PP
+cat \f[I]some_file\f[] | vimpager
+.SH DESCRIPTION
+.PP
+A slightly more sophisticated replacement for less.sh that also supports
+being set as the PAGER environment variable.
+Displays man pages, perldocs and python documentation properly.
+Works on Linux, Solaris, FreeBSD, OSX, Cygwin and msys.
+Should work on most other systems as well.
+.PP
+On GitHub: <http://github.com/rkitover/vimpager>
+.PP
+To use it as as your PAGER: put these in your ~/.bashrc or ~/.zshrc
+.IP
+.nf
+\f[C]
+export\ PAGER=~/bin/vimpager
+alias\ less=$PAGER
+alias\ zless=$PAGER
+\f[]
+.fi
+.PP
+To use a different vimrc with vimpager, put your settings into a
+~/.vimpagerrc or a file pointed to by the VIMPAGER_RC environment
+variable.
+.PP
+To disable loading plugins, put \[lq]set noloadplugins\[rq] into a
+~/.vimpagerrc file.
+.PP
+You can also switch on the \[lq]vimpager\[rq] variable in your vimrc to
+set alternate settings for vimpager.
+.PP
+Put the following into your vimrc if you want to use gvim/MacVim for
+your pager window:
+.IP
+.nf
+\f[C]
+let\ vimpager_use_gvim\ =\ 1
+\f[]
+.fi
+.SH CYGWIN NOTES
+.PP
+The Cygwin gvim is very buggy, vimpager works correctly with the native
+Windows gvim, just put it in your PATH.
+.SH AUTHORS
+Rafael Kitover <rkitover@cpan.org>.
